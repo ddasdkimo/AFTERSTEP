@@ -40,3 +40,17 @@ android/*.iml
 # Firebase config files (contain sensitive data)
 google-services.json
 GoogleService-Info.plist
+
+# Coverage reports
+coverage/
+
+# Generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Claude Code
+.claude/
+
+# Test artifacts
+*.test.log

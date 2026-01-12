@@ -1,0 +1,62 @@
+name: afterstep_fog
+description: "現實世界 Fog - 透過步行解鎖地圖霧區的 App"
+publish_to: 'none'
+
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # 位置服務
+  geolocator: ^13.0.2
+  flutter_background_service: ^5.0.12
+  flutter_background_service_ios: ^5.0.3
+  permission_handler: ^11.3.1
+
+  # Firebase
+  firebase_core: ^3.12.1
+  firebase_auth: ^5.5.1
+  cloud_firestore: ^5.6.6
+  firebase_messaging: ^15.2.5
+
+  # 本地儲存
+  sqflite: ^2.4.1
+  path_provider: ^2.1.5
+  shared_preferences: ^2.3.4
+
+  # 推播
+  flutter_local_notifications: ^18.0.1
+
+  # 狀態管理與響應式
+  provider: ^6.1.2
+  rxdart: ^0.28.0
+
+  # 地圖
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+  # 工具
+  uuid: ^4.5.1
+  equatable: ^2.0.7
+  collection: ^1.19.1
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  mocktail: ^1.0.4
+  fake_async: ^1.3.2
+  build_runner: ^2.4.13
+  coverage: ^1.11.1
+
+flutter:
+  uses-material-design: true
