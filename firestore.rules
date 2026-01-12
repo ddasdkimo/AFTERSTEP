@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================================
+    // 全域 Cell 活動（紅點系統用）
+    // ==========================================
+    match /cells/{cellId} {
+      // 任何已驗證使用者可讀取
+      allow read: if request.auth != null;
+
+      // 任何已驗證使用者可更新 last_activity_time
+      // 限制：只能更新這個欄位，且值必須是伺服器時間
+      allow create, update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['last_activity_time'])
+        && request.resource.data.last_activity_time == request.time;
+
+      // 不允許刪除
+      allow delete: if false;
+    }
+
+    // ==========================================
+    // 使用者個人資料
+    // ==========================================
+    match /users/{userId} {
+      // 只有本人可以讀寫自己的資料
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // 使用者的 Cell 狀態（已解鎖的區域）
+      match /cells/{cellId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // 使用者的 Fog 資料（解鎖點、軌跡）
+      match /fog/{fogId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}

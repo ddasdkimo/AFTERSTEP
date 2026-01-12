@@ -1,0 +1,42 @@
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+*.iml
+.idea/
+.vscode/
+*.log
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/
+
+# Android
+android/.gradle/
+android/local.properties
+android/*.iml
+
+# macOS
+.DS_Store
+*.swp
+
+# Environment
+.env
+.env.*
+*.local
+
+# IDE
+*.sublime-*
+
+# Firebase config files (contain sensitive data)
+google-services.json
+GoogleService-Info.plist

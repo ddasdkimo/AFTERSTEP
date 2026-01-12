@@ -1,0 +1,15 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "cells",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "last_activity_time",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
